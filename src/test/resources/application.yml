@@ -14,4 +14,4 @@ spring:
     jdbc:
       initialize-schema: always
     job:
-      names: firstJob
+      names: no-job
