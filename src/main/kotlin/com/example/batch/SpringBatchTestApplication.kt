@@ -9,13 +9,13 @@ import javax.annotation.PostConstruct
 @EnableBatchProcessing
 @SpringBootApplication
 class SpringBatchTestApplication {
-    @Value("\${spring.batch.job.names:}")
+    @Value("\${${SPRING_BATCH_JOB_NAMES_PROPERTY}:}")
     private lateinit var jobNames: String
 
     @PostConstruct
     fun checkBatchEnvironmentVariable() {
         require(jobNames.isNotBlank()) {
-            "`spring.batch.job.names` value must not be empty"
+            "`${SPRING_BATCH_JOB_NAMES_PROPERTY}` value must not be empty"
         }
     }
 }

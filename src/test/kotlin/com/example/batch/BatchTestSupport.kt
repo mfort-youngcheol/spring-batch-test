@@ -9,7 +9,9 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Primary
+import org.springframework.test.context.ActiveProfiles
 
+@ActiveProfiles("test")
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.RUNTIME)
 @SpringBatchTest
@@ -22,6 +24,7 @@ class EmptyJobForTestConfiguration(
     private val stepBuilderFactory: StepBuilderFactory,
 ) {
 
+    // JobLauncherTestUtils가 주입받는 Job을 하나로 명시하기 위한 bean
     @Primary
     @Bean
     fun job(): Job {

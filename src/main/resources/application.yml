@@ -14,4 +14,4 @@ spring:
     jdbc:
       initialize-schema: always
     job:
-      names: firstJob
+      names: secondJob # run only Job with name `secondJob`

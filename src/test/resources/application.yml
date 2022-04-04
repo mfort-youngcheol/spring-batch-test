@@ -14,4 +14,4 @@ spring:
     jdbc:
       initialize-schema: always
     job:
-      names: no-job
+      names: no-job # Test 전에 Job이 실행되는 것을 막기 위해 존재하지 않는 Job name을 적는다
