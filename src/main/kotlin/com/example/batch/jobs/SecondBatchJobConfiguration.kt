@@ -42,12 +42,12 @@ class SecondBatchJobConfiguration(
     fun secondJobStep(@Value("#{jobParameters[secondParam]}") secondParam: String? = null): Step {
 //        requireNotNull(secondParam)
 
-        return this.stepBuilderFactory.get("secondtJobStep")
+        return this.stepBuilderFactory.get("secondJobStep")
             .tasklet { contribution, chunkContext ->
-                println("[secondtJobStep] Step is running")
-                println("[secondtJobStep] secondParam is `$secondParam`")
+                println("[secondJobStep] Step is running")
+                println("[secondJobStep] secondParam is `$secondParam`")
                 secondJobRunCount++
-                println("[secondtJobStep] runCount is `${secondJobRunCount}`")
+                println("[secondJobStep] runCount is `${secondJobRunCount}`")
                 RepeatStatus.FINISHED
             }
             .build()
